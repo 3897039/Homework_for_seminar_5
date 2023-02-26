@@ -7,7 +7,7 @@ int [] MyArray(int size)
     int [] myArray = new int[size];
     for(int i = 0; i < myArray.Length; i++)
     {
-        myArray[i] = new Random().Next();
+        myArray[i] = new Random().Next(0, 101);
     }
     return myArray;
 }
@@ -30,6 +30,7 @@ int DegreeNumber(int[] array)
 {
     int maxNumber = array[0];
     int minNumber = array[1];
+    int degreeNumber = 0;
     if(maxNumber < minNumber)
     {
         maxNumber = minNumber;
@@ -40,7 +41,7 @@ int DegreeNumber(int[] array)
             if (array[i] > maxNumber) maxNumber = array[i];
             if (array[i] < minNumber) minNumber = array[i];
         }
-    return  Math.Round(maxNumber - minNumber,2); 
+    return  (degreeNumber = maxNumber - minNumber); 
 }
 
 int sizeArray = IntputSizeArray("Введите размер массива ");
